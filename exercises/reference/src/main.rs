@@ -8,11 +8,15 @@
 
 fn main() {
     let name = format!("dear rustaceans");
-    greet(name.clone());
-    greet(name);
+    let r = &name[..];//全ての文字列が対象
+    let s = &name[5..];//この数字は byteの始まり。日本語だとアウト
+    greet(r);
+    greet(s);
 }
 
-fn greet(name: String) {
+fn greet(name: &str) {
     println!("Hello {}", name);
 }
 
+// Hello dear rustaceans
+// Hello rustaceans

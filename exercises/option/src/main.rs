@@ -16,6 +16,9 @@ fn main() {
     catalog.insert("スイカ", 2000);
 
     for item in catalog.keys() {
+        match catalog.get(item) {
+            
+        };
         show_price(item, catalog.get(item));
     }
     // show_price("鮭", catalog.get("鮭"));
@@ -24,4 +27,3 @@ fn main() {
 fn show_price(name: &str, price: u32) {
     println!("{}は{}円です", name, price);
 }
-
